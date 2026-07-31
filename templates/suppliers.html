@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Suppliers</title>
+
+  <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/products.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Suppliers</h1>
+
+        <a href="/add-supplier" class="add-btn">
+            + Add Supplier
+        </a>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for supplier in suppliers %}
+
+        <tr>
+
+            <td>{{ supplier.id }}</td>
+            <td>{{ supplier.name }}</td>
+            <td>{{ supplier.contact }}</td>
+
+            <td>
+
+                <a href="/delete-supplier/{{ supplier.id }}"
+                   class="delete-btn"
+                   onclick="return confirm('Delete this supplier?')">
+
+                    Delete
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <a href="/dashboard" class="back-btn">
+
+        ← Back to Dashboard
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

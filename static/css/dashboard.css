@@ -1,0 +1,346 @@
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+
+.dashboard{
+
+    display:flex;
+
+    height:100vh;
+
+}
+
+.sidebar{
+
+    width:260px;
+
+    background:#2d2f36;
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.main-content{
+
+    flex:1;
+
+    background:#f5f7fb;
+
+    padding:30px;
+
+}
+/* ---------------- Logo ---------------- */
+
+.logo{
+
+    padding:35px 25px;
+
+}
+
+.logo h2{
+
+    font-size:24px;
+
+    font-weight:600;
+
+}
+
+.logo p{
+
+    color:#cfcfcf;
+
+    font-size:15px;
+
+    margin-top:10px;
+
+    line-height:1.5;
+
+}
+
+/* ---------------- Divider ---------------- */
+
+.sidebar hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#4a4a4a;
+
+    margin:0 20px;
+
+}
+
+/* ---------------- Menu ---------------- */
+
+.menu{
+
+    list-style:none;
+
+    margin-top:35px;
+
+}
+
+.menu li{
+
+    padding:16px 30px;
+
+    margin:8px 12px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+/* ---------------- Hover ---------------- */
+
+.menu li:hover{
+
+    background:#7c3aed;
+
+    transform:translateX(5px);
+
+}
+/* ---------------- Topbar ---------------- */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.page-title h1{
+
+    font-size:30px;
+
+    font-weight:600;
+
+}
+
+.page-title p{
+
+    color:#777;
+
+    margin-top:6px;
+
+}
+
+.profile{
+
+    background:white;
+
+    padding:12px 24px;
+
+    border-radius:12px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    font-weight:500;
+
+}
+
+/* ---------------- Dashboard Cards ---------------- */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card h3{
+
+    color:#777;
+
+    font-size:16px;
+
+    margin-bottom:15px;
+
+}
+
+.card h2{
+
+    color:#7c3aed;
+
+    font-size:34px;
+
+}
+/* ---------------- Recent Products Table ---------------- */
+
+.table-container{
+
+    background:white;
+
+    margin-top:35px;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.table-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.table-header h2{
+
+    font-size:24px;
+
+}
+
+.table-header button{
+
+    background:#7c3aed;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.table-header button:hover{
+
+    background:#6d28d9;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    text-align:left;
+
+    padding:16px;
+
+    background:#f3f4f6;
+
+    font-weight:600;
+
+}
+
+td{
+
+    padding:18px 16px;
+
+    border-bottom:1px solid #eeeeee;
+
+}
+
+tr:hover{
+
+    background:#faf8ff;
+
+}
+
+.status{
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+}
+
+.in-stock{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+.low-stock{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+.menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:block;
+
+    width:100%;
+
+}
+
+.menu a:hover{
+
+    color:white;
+
+}

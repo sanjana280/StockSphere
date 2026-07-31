@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+
+            <h2>StockSphere</h2>
+
+            <p>Cloud Inventory System</p>
+
+        </div>
+
+        <hr>
+
+        <ul class="menu">
+
+    <li>
+        <a href="/dashboard">🏠 Dashboard</a>
+    </li>
+
+    <li>
+        <a href="/products">📦 Products</a>
+    </li>
+
+    <li>
+        <a href="/categories">📂 Categories</a>
+    </li>
+
+    <li>
+        <a href="/suppliers">🏢 Suppliers</a>
+    </li>
+
+    <li>
+        <a href="/">🚪 Logout</a>
+    </li>
+
+</ul>
+
+    </div>
+
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Top Bar -->
+
+        <div class="topbar">
+
+            <div class="page-title">
+
+                <h1>Dashboard</h1>
+
+                <p>Welcome back, Admin 👋</p>
+
+            </div>
+
+            <div class="profile">
+
+                Admin
+
+            </div>
+
+        </div>
+
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Products</h3>
+
+                <h2>{{ total_products }}</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Categories</h3>
+
+                <h2>{{ total_categories }}</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Suppliers</h3>
+
+                <h2>0</h2>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Low Stock</h3>
+
+                <h2>{{ low_stock }}</h2>
+
+            </div>
+
+        </div>
+
+
+        <!-- Recent Products Table -->
+
+        <div class="table-container">
+
+            <div class="table-header">
+
+                <h2>Recent Products</h2>
+
+                <a href="/add-product" class="add-btn">Add Product</a>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Product</th>
+
+                        <th>Category</th>
+
+                        <th>Stock</th>
+
+                        <th>Supplier</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+{% for product in recent_products %}
+
+<tr>
+
+    <td>{{ product.name }}</td>
+
+    <td>{{ product.category }}</td>
+
+    <td>{{ product.quantity }}</td>
+
+    <td>—</td>
+
+    <td>
+
+        {% if product.quantity < 10 %}
+
+            <span class="status low-stock">
+                Low Stock
+            </span>
+
+        {% else %}
+
+            <span class="status in-stock">
+                In Stock
+            </span>
+
+        {% endif %}
+
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

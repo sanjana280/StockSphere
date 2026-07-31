@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Categories | StockSphere</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/products.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Categories</h1>
+
+        <a href="/add-category" class="add-btn">
+            + Add Category
+        </a>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Category Name</th>
+                <th>Actions</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for category in categories %}
+
+        <tr>
+
+            <td>{{ category.id }}</td>
+
+            <td>{{ category.name }}</td>
+
+            <td>
+
+                <a href="/delete-category/{{ category.id }}"
+                   class="delete-btn"
+                   onclick="return confirm('Delete this category?')">
+
+                    Delete
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+    <br>
+
+    <a href="/dashboard" class="back-btn">
+        ← Back to Dashboard
+    </a>
+
+</div>
+
+</body>
+
+</html>

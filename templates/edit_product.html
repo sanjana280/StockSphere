@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Product | StockSphere</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/products.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✏ Edit Product</h1>
+
+    <form method="POST">
+
+        <label>Product Name</label><br>
+        <input type="text"
+               name="name"
+               value="{{ product.name }}"
+               required><br><br>
+
+        <label>Category</label><br>
+        <input type="text"
+               name="category"
+               value="{{ product.category }}"
+               required><br><br>
+
+        <label>Price</label><br>
+        <input type="number"
+               step="0.01"
+               name="price"
+               value="{{ product.price }}"
+               required><br><br>
+
+        <label>Quantity</label><br>
+        <input type="number"
+               name="quantity"
+               value="{{ product.quantity }}"
+               required><br><br>
+
+        <button type="submit" class="add-btn">
+            Update Product
+        </button>
+
+    </form>
+
+    <br>
+
+    <a href="/products" class="back-btn">
+        ← Back to Products
+    </a>
+
+</div>
+
+</body>
+
+</html>
